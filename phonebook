@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+if [ $1 = "new" ]; then
+	echo $2 $3 >> phonebook.log
+elif [ $1 = "list" ]; then
+	list=$(cat phonebook.log)
+	if [ "$list" = "" ]; then
+		echo "phonebook is empty"
+	else
+		cat phonebook.log
+	fi
+elif [ $1 = "remove" ]; then
+	sed -i "/${2}/d" phonebook.log
+elif [ $1 = "clear" ]; then
+	> phonebook.log
+elif [ $1 = "lookup" ]; then
+	NAME=$2
+	cat phonebook.log | grep "$NAME" | sed -E 's/^.*([0-9]{3}-[0-9]{3}-[0-9]{4})$/\1/'
+fi
