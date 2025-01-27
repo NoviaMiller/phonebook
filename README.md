@@ -8,7 +8,7 @@ phonebook list : to list all information in phonebook.log ,if there is nothing ,
 
 phonebook remove "NAME" :remove one's information ,if the man is unknown ,nothing happened
 
-phonebook clear : a dangerous command which can clear phonebool all
+phonebook clear : a dangerous command which can clear phonebook all
 
 phonebook lookup "NAME" : list one's name and phonenumber,no matter if there are so many same names
 
